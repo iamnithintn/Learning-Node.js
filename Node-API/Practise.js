@@ -20,6 +20,8 @@ const Product = require('./Models/productmodel')
 //**Step 6: Establish DB Connection
 // const { MONGO_URI } = require('./config');
 
+
+
 mongoose.connect('mongodb+srv://root:root@learningapi.svclyxa.mongodb.net/Node-API?retryWrites=true&w=majority')
     .then(() => {
         console.log("Connected to MongoDB Server");
