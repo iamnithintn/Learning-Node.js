@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
-const connection = mongoose.createConnection('mongodb+srv://root:root@learningapi.svclyxa.mongodb.net/Todo-App?retryWrites=true&w=majority').on('open',()=>{
+
+const uri = process.env.DB_URL;
+const connection = mongoose.createConnection(uri).on('open',()=>{
     console.log('Connected to MongoDB');
 }).on('error',()=>{
     console.log("Mongoose error");
 })
 
 module.exports = connection;
+
+
+
+

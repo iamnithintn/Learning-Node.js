@@ -11,7 +11,6 @@ class UserService{
         } catch (error) {
             throw error;
         }
-        
     }
 
     static async checkUser(email){
@@ -25,7 +24,6 @@ class UserService{
     static async generateToken(tokenData,secretKey,jwt_expire){
         return jwt.sign(tokenData, secretKey, {expiresIn:jwt_expire});
     }
-
 }
 
 

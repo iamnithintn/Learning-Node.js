@@ -1,4 +1,5 @@
 const UserService = require('../services/user.services');
+require('dotenv').config()
 
 
 exports.register = async(req,res,next)=>{
@@ -30,7 +31,7 @@ exports.login = async(req,res,next)=>{
         }
 
         let tokenData = {_id:User._id,email:User.email};
-        const token = await UserService.generateToken(tokenData,"secretKey",'1h')
+        const token = await UserService.generateToken(tokenData,process.env.SECRET_KEY,'1h')
         res.status(200).json({status: true, token:token});
 
     } catch (error) {
